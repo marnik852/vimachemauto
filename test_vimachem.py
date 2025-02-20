@@ -2,7 +2,7 @@ from playwright.sync_api import Page
 import pytest
 
 def test_signup(page: Page):
-     page.goto("/addUser")
+     page.goto("https://thinking-tester-contact-list.herokuapp.com/addUser")
      page.fill("input[id='firstName']", "Katerina")
      page.fill("input[id='lastName']", "Papadopoulou")
      page.fill("input[id='email']", "test67abe14@gmail.com")
@@ -12,7 +12,7 @@ def test_signup(page: Page):
 
 def test_signin_addNewContact_validate(page: Page):
      # Login
-     page.goto("/login")
+     page.goto("https://thinking-tester-contact-list.herokuapp.com/login")
      page.fill("input[id='email']", "test67abe14@gmail.com")
      page.fill("input[id='password']", "Test@1234")
      page.click("button[id='submit']")
@@ -29,7 +29,7 @@ def test_signin_addNewContact_validate(page: Page):
 
 def test_invalidDate_validateError(page: Page):
      # Login
-     page.goto("/login")
+     page.goto("https://thinking-tester-contact-list.herokuapp.com/login")
      page.fill("input[id='email']", "test67abe14@gmail.com")
      page.fill("input[id='password']", "Test@1234")
      page.click("button[id='submit']")
@@ -46,7 +46,7 @@ def test_invalidDate_validateError(page: Page):
 
 def test_deleteContact(page: Page):
      # Login
-     page.goto("/login")
+     page.goto("https://thinking-tester-contact-list.herokuapp.com/login")
      page.fill("input[id='email']", "test67abe14@gmail.com")
      page.fill("input[id='password']", "Test@1234")
      page.click("button[id='submit']") 
