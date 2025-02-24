@@ -21,4 +21,4 @@ jobs:
           playwright install --with-deps
 
       - name: Run Playwright tests
-        run: pytest test_vimachem.py
+        run: pytest test_vimachem.py --headed
